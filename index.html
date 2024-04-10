@@ -162,9 +162,6 @@
                     </form>
                 </div>
             </div>
-            <div id="popup" class="popup">
-                Mensagem Enviada
-            </div>
         </section>
 
         <section class="container-fluid bg-light text-body m-0 p-0" id="redes">
@@ -178,6 +175,7 @@
 
         <section class="container-fluid comments bg-light pt-4">
             <div class="container" id="disqus_thread"></div>
+            <div id="contador-visitas" style="color: rgb(255, 255, 255);"></div>
         </section>
     </footer>
 
@@ -196,7 +194,28 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+    <script>
+        // Função para atualizar o contador de visitas
+        function atualizarContador() {
+            // Verifica se o contador já está armazenado localmente
+            if (localStorage.getItem('contadorVisitas')) {
+                // Se existir, incrementa o contador
+                var contador = parseInt(localStorage.getItem('contadorVisitas'));
+                contador++;
+                localStorage.setItem('contadorVisitas', contador);
+            } else {
+                // Se não existir, cria o contador com valor 1
+                localStorage.setItem('contadorVisitas', 1);
+            }
+            // Exibe o contador na página
+            document.getElementById('contador-visitas').innerText = localStorage.getItem('contadorVisitas');
+        }
 
+        // Chama a função para atualizar o contador quando a página for carregada
+        window.onload = function() {
+            atualizarContador();
+        };
+    </script>
 </body>
 
 </html>
