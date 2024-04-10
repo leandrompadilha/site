@@ -36,7 +36,7 @@
     <nav class="container-fluid bg-light fixed-top" id="inicio">
         <div class="container navbar navbar-expand-lg navbar-light
                 bg-light">
-            <a class="navbar-brand" href="."><img src="/src/img/favicon.svg" class="favicon pb-1"> leandroPadilha</a>
+            <a class="navbar-brand" href="#" href="#" onclick="zerarContador()"><img src="/src/img/favicon.svg" class="favicon pb-1"> leandroPadilha</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -210,6 +210,12 @@
             }
             // Exibe o contador na página
             document.getElementById('contador-visitas').innerText = localStorage.getItem('contadorVisitas');
+        }
+
+        // Função para zerar o contador
+        function zerarContador() {
+            localStorage.removeItem('contadorVisitas'); // Remove o contador do armazenamento local
+            atualizarContador(); // Atualiza o contador na página (que agora será reiniciado)
         }
 
         // Chama a função para atualizar o contador quando a página for carregada
