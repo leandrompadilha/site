@@ -9,21 +9,74 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    #mobile-warning {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      background-color: #f0f4f8;
+      color: #333;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #mobile-warning h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #1a73e8;
+    }
+
+    #mobile-warning p {
+      font-size: 18px;
+      max-width: 400px;
     }
 
     iframe {
       width: 100%;
-      height: 100%;
+      height: 100vh;
       border: none;
+      display: block;
     }
   </style>
 </head>
 <body>
+  <div id="mobile-warning">
+    <h1>Estamos quase lá!</h1>
+    <p>A versão para dispositivos móveis ainda está em construção. Para a melhor experiência, acesse este conteúdo em um computador.</p>
+  </div>
+
   <iframe
+    id="powerbi-frame"
     title="Portfólio"
     src="https://app.powerbi.com/view?r=eyJrIjoiN2Q5MjMwYjItMjMwNC00ODYxLTllN2QtYmFmN2U2YTYyZDBhIiwidCI6Ijk5ZjczMGYzLWVlOWEtNDI4Mi04YmFiLWQ4NzNlZmMyMjZiMyJ9"
     allowfullscreen>
   </iframe>
+
+  <script>
+    function verificarTamanhoTela() {
+      const largura = window.innerWidth;
+      const aviso = document.getElementById('mobile-warning');
+      const iframe = document.getElementById('powerbi-frame');
+
+      if (largura <= 768) {
+        aviso.style.display = 'flex';
+        iframe.style.display = 'none';
+      } else {
+        aviso.style.display = 'none';
+        iframe.style.display = 'block';
+      }
+    }
+
+    verificarTamanhoTela();
+    window.addEventListener('resize', verificarTamanhoTela);
+  </script>
 </body>
 </html>
