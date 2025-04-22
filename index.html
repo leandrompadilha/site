@@ -63,10 +63,11 @@
   <script>
     function verificarTamanhoTela() {
       const largura = window.innerWidth;
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       const aviso = document.getElementById('mobile-warning');
       const iframe = document.getElementById('powerbi-frame');
 
-      if (largura <= 768) {
+      if (isMobile && largura <= 1024) {
         aviso.style.display = 'flex';
         iframe.style.display = 'none';
       } else {
