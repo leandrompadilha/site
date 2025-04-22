@@ -2,8 +2,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>leandroPadilha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Leandro Padilha | Portfólio em Power BI</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfólio interativo em Power BI de Leandro Padilha, especialista em análise de dados, indicadores de pessoas, processos operacionais e muito mais.">
+  <meta name="author" content="Leandro Padilha">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Leandro Padilha | Portfólio Power BI">
+  <meta property="og:description" content="Dashboard interativo com indicadores de pessoas e processos criado por Leandro Padilha. Acesse pelo computador para melhor experiência.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leandropadilha.com"> <!-- Substitua pela URL real -->
+  <meta property="og:image" content="https://seu-site.com/img/thumb.jpg"> <!-- Substitua pela imagem real -->
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="/src/img/favicon2.ico" type="image/x-icon">
+
+  <!-- Estilos -->
   <style>
     html, body {
       margin: 0;
@@ -41,8 +59,8 @@
     }
 
     #mobile-warning .highlight {
-      background-color: #1a73e8; /* Cor azul da primeira palavra */
-      color: white; /* Cor da letra branca */
+      background-color: #1a73e8;
+      color: white;
       padding: 5px 10px;
       border-radius: 5px;
     }
@@ -54,28 +72,28 @@
       display: block;
     }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N3XB22447"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9N3XB22447');
+  </script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9N3XB22447"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9N3XB22447');
-</script>
 
 <body>
   <div id="mobile-warning">
     <h1>Estamos quase lá!</h1>
-    <p>A versão para dispositivos móveis ainda está em construção. Para a melhor experiência, <br> <span class="highlight">acesse este conteúdo pelo computador.</span></p>
-
+    <p>A versão para dispositivos móveis ainda está em construção. Para a melhor experiência, <br>
+      <span class="highlight">acesse este conteúdo pelo computador.</span>
+    </p>
   </div>
 
   <iframe
     id="powerbi-frame"
-    title="Portfólio"
+    title="Dashboard Power BI de Leandro Padilha"
     src="https://app.powerbi.com/view?r=eyJrIjoiNmY0NGZhZGItZTY5Yi00ODZkLWEyYWEtMDg5MzM0OTc1MTg2IiwidCI6Ijk5ZjczMGYzLWVlOWEtNDI4Mi04YmFiLWQ4NzNlZmMyMjZiMyJ9"
     allowfullscreen>
   </iframe>
