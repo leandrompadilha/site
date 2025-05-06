@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leandro Padilha</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfólio interativo em Power BI de Leandro Padilha, especialista em análise de dados, indicadores de pessoas, processos operacionais e muito mais.">
-  <meta name="author" content="Leandro Padilha">
-  <meta name="robots" content="index, follow">
+  <!-- Meta tags -->
+  <meta name="description" content="Portfólio interativo de Leandro Padilha. Acesse pelo computador." />
+  <meta name="author" content="Leandro Padilha" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph para redes sociais -->
-  <meta property="og:title" content="Leandro Padilha">
-  <meta property="og:description" content="Acesse pelo computador para melhor experiência.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://leandropadilha.com">
-  <meta property="og:image" content="https://raw.githubusercontent.com/leandrompadilha/leandrompadilha.github.io/main/src/img/thumb.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Leandro Padilha" />
+  <meta property="og:description" content="Acesse pelo computador para melhor experiência." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://leandropadilha.com" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/leandrompadilha/leandrompadilha.github.io/main/src/img/thumb.jpg" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="/src/img/favicon2.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/src/img/favicon2.ico" type="image/x-icon" />
 
-  <!-- Estilos -->
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     #mobile-warning {
       display: none;
       height: 100vh;
       width: 100%;
-      background-color: #f0f4f8;
-      color: #333;
-      text-align: center;
-      box-sizing: border-box;
-      padding: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    #mobile-warning h1 {
-      font-size: 25px;
-      margin-bottom: 20px;
-      color: #1a73e8;
+    .icon-circle {
+      background-color: #004085;
+      color: #fff;
+      font-size: 36px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
     }
 
-    #mobile-warning p {
-      font-size: 14px;
-      max-width: 95%;
-      line-height: 1.8;
+    .warning-title {
+      font-size: 24px;
+      color: #004085;
+      margin: 0 0 12px;
+      font-weight: 600;
     }
 
-    #mobile-warning .highlight {
-      background-color: #1a73e8;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
+    .warning-subtitle {
+      font-size: 16px;
+      color: #6c757d;
+      max-width: 500px;
+      line-height: 1.6;
     }
 
     iframe {
@@ -70,6 +76,22 @@
       height: 100vh;
       border: none;
       display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @media (min-width: 600px) {
+      .warning-title { font-size: 28px; }
+      .warning-subtitle { font-size: 18px; }
     }
   </style>
 
@@ -85,10 +107,9 @@
 
 <body>
   <div id="mobile-warning">
-    <h1>Estamos quase lá!</h1>
-    <p>A versão para dispositivos móveis ainda está em construção. Para a melhor experiência, <br>
-      <span class="highlight">acesse este conteúdo pelo computador.</span>
-    </p>
+    <div class="icon-circle">⚠️</div>
+    <h1 class="warning-title">Acesse este conteúdo pelo computador</h1>
+    <p class="warning-subtitle">A versão para celular está em construção e em breve estará disponível para você.</p>
   </div>
 
   <iframe
