@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leandro Padilha</title>
+
+  <!-- Meta tags -->
+  <meta name="description" content="Portfólio interativo de Leandro Padilha. Acesse pelo computador." />
+  <meta name="author" content="Leandro Padilha" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Leandro Padilha" />
+  <meta property="og:description" content="Acesse pelo computador para melhor experiência." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://leandropadilha.com" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/leandrompadilha/leandrompadilha.github.io/main/src/img/thumb.jpg" />
+
+  <link rel="shortcut icon" href="/src/img/favicon2.ico" type="image/x-icon" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #mobile-warning {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .icon-circle {
+      background-color: #004085;
+      color: #fff;
+      font-size: 36px;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite;
+    }
+
+    .warning-title {
+      font-size: 24px;
+      color: #004085;
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .warning-subtitle {
+      font-size: 16px;
+      color: #6c757d;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @media (min-width: 600px) {
+      .warning-title { font-size: 28px; }
+      .warning-subtitle { font-size: 18px; }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9N3XB22447"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9N3XB22447');
+  </script>
+</head>
+
+<body>
+  <div id="mobile-warning">
+    <div class="icon-circle">⚠️</div>
+    <h1 class="warning-title">Acesse este conteúdo <br> pelo computador</h1>
+    <p class="warning-subtitle">Tudo foi pensado para que você <br> tenha a melhor experiência possível</p>
+  </div>
+
+  <iframe
+    id="powerbi-frame"
+    title="Dashboard Power BI de Leandro Padilha"
+    src="https://app.powerbi.com/view?r=eyJrIjoiOTNmZTM5MGYtZWE2Ny00MjU0LWIwZGItMTQ1NjI5MzQ4NTZhIiwidCI6Ijk5ZjczMGYzLWVlOWEtNDI4Mi04YmFiLWQ4NzNlZmMyMjZiMyJ9"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    function verificarTamanhoTela() {
+      const largura = window.innerWidth;
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const aviso = document.getElementById('mobile-warning');
+      const iframe = document.getElementById('powerbi-frame');
+
+      if (isMobile && largura <= 1024) {
+        aviso.style.display = 'flex';
+        iframe.style.display = 'none';
+      } else {
+        aviso.style.display = 'none';
+        iframe.style.display = 'block';
+      }
+    }
+
+    verificarTamanhoTela();
+    window.addEventListener('resize', verificarTamanhoTela);
+  </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Quiz: Você saberia identificar um golpe?</title>
+  <link rel="icon" type="image/png" href=".\src\image\icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #1e2a38;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      background: #2e3e50;
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options li:hover {
+      background: #3e5670;
+    }
+    .btn {
+      background: #00c9a7;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: block;
+    }
+    .btn:hover {
+      background: #00b39a;
+    }
+    .result {
+      text-align: center;
+      font-size: 1.3em;
+      margin-top: 30px;
+    }
+    .dica {
+      background: #2c3e50;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .progress-container {
+      margin-bottom: 30px;
+    }
+    .progress-text {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #00c9a7;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #2e3e50;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00c9a7, #00b39a);
+      border-radius: 6px;
+      transition: width 0.5s ease;
+      position: relative;
+    }
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Mini Quiz: Você saberia identificar um golpe?</h1>
+    <div id="quiz">
+      <div class="progress-container" id="progressContainer" style="display:none;">
+        <div class="progress-text" id="progressText">Pergunta 1 de 5</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
+        </div>
+      </div>
+      <div class="question" id="questionText"></div>
+      <ul class="options" id="optionsList"></ul>
+      <button class="btn" id="nextBtn" style="display:none;">Próxima</button>
+    </div>
+    <div class="result" id="result" style="display:none;"></div>
+    <div class="dica" id="dica" style="display:none;"></div>
+    <button class="btn" id="restartBtn" style="display:none;">Refazer Teste</button>
+  </div>
+
+  <script>
+    let todasPerguntas = [];
+    let perguntasSelecionadas = [];
+    let pontuacao = 0;
+    let perguntaAtual = 0;
+
+    const questionText = document.getElementById("questionText");
+    const optionsList = document.getElementById("optionsList");
+    const nextBtn = document.getElementById("nextBtn");
+    const result = document.getElementById("result");
+    const dica = document.getElementById("dica");
+    const restartBtn = document.getElementById("restartBtn");
+    const progressContainer = document.getElementById("progressContainer");
+    const progressText = document.getElementById("progressText");
+    const progressFill = document.getElementById("progressFill");
+
+    async function carregarPerguntas() {
+      try {
+        const response = await fetch("quiz_questions.json");
+        const data = await response.json();
+        todasPerguntas = data;
+        iniciarQuiz();
+      } catch (error) {
+        questionText.textContent = "Erro ao carregar perguntas.";
+        console.error(error);
+      }
+    }
+
+    function embaralhar(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function iniciarQuiz() {
+      pontuacao = 0;
+      perguntaAtual = 0;
+      result.style.display = "none";
+      dica.style.display = "none";
+      restartBtn.style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+      progressContainer.style.display = "block";
+
+      embaralhar(todasPerguntas);
+      perguntasSelecionadas = todasPerguntas.slice(0, 5);
+      atualizarProgresso();
+      mostrarPergunta();
+    }
+
+    function mostrarPergunta() {
+      const pergunta = perguntasSelecionadas[perguntaAtual];
+      questionText.textContent = pergunta.question;
+      optionsList.innerHTML = "";
+      nextBtn.style.display = "none";
+
+      pergunta.options.forEach((opcao, index) => {
+        const li = document.createElement("li");
+        li.textContent = opcao;
+        li.onclick = () => verificarResposta(index, li);
+        optionsList.appendChild(li);
+      });
+    }
+
+    function atualizarProgresso() {
+      const atual = perguntaAtual + 1;
+      const total = perguntasSelecionadas.length;
+      const porcentagem = (atual / total) * 100;
+
+      progressText.textContent = `Pergunta ${atual} de ${total}`;
+      progressFill.style.width = `${porcentagem}%`;
+    }
+
+    function verificarResposta(indice, elemento) {
+      const opcoes = optionsList.querySelectorAll("li");
+      opcoes.forEach(li => li.style.pointerEvents = "none");
+
+      if (indice === perguntasSelecionadas[perguntaAtual].answer) {
+        elemento.style.background = "#28a745";
+        pontuacao++;
+      } else {
+        elemento.style.background = "#dc3545";
+        opcoes[perguntasSelecionadas[perguntaAtual].answer].style.background = "#28a745";
+      }
+
+      nextBtn.style.display = "block";
+    }
+
+    nextBtn.onclick = () => {
+      perguntaAtual++;
+      if (perguntaAtual < perguntasSelecionadas.length) {
+        atualizarProgresso();
+        mostrarPergunta();
+      } else {
+        mostrarResultado();
+      }
+    };
+
+    restartBtn.onclick = iniciarQuiz;
+
+    function mostrarResultado() {
+      document.getElementById("quiz").style.display = "none";
+      progressContainer.style.display = "none";
+      result.style.display = "block";
+      dica.style.display = "block";
+      restartBtn.style.display = "block";
+
+      const porcentagemAcerto = (pontuacao / perguntasSelecionadas.length) * 100;
+
+      let nivel, emoji, estatistica, mensagem, cor;
+
+      if (pontuacao === 5) {
+        nivel = "Especialista em Segurança";
+        emoji = "🏆";
+        estatistica = "apenas 8% das pessoas";
+        mensagem = "Incrível! Você está no topo dos mais preparados para evitar golpes. Seu conhecimento é excepcional e você faz parte de uma elite de pessoas conscientes sobre segurança digital.";
+        cor = "#FFD700";
+      } else if (pontuacao === 4) {
+        nivel = "Guardião Experiente";
+        emoji = "🛡️";
+        estatistica = "apenas 25% das pessoas";
+        mensagem = "Excelente! Você tem um conhecimento sólido sobre golpes e está muito bem preparado. Continue atento aos detalhes para se tornar um especialista.";
+        cor = "#00c9a7";
+      } else if (pontuacao === 3) {
+        nivel = "Detetive em Treinamento";
+        emoji = "🕵️";
+        estatistica = "cerca de 40% das pessoas";
+        mensagem = "Bom trabalho! Você já conhece os principais sinais de golpes, mas ainda há espaço para melhorar. Estude mais sobre os métodos mais sutis dos golpistas.";
+        cor = "#17a2b8";
+      } else if (pontuacao === 2) {
+        nivel = "Aprendiz Consciente";
+        emoji = "📚";
+        estatistica = "aproximadamente 60% das pessoas";
+        mensagem = "Você está começando a desenvolver sua consciência sobre golpes. É importante estudar mais e ficar atento aos sinais de alerta no dia a dia.";
+        cor = "#ffc107";
+      } else if (pontuacao === 1) {
+        nivel = "Iniciante Vulnerável";
+        emoji = "⚠️";
+        estatistica = "cerca de 80% das pessoas";
+        mensagem = "Atenção! Você precisa urgentemente aprender mais sobre golpes. Leia nosso material com cuidado e compartilhe com familiares para se protegerem juntos.";
+        cor = "#fd7e14";
+      } else {
+        nivel = "Alvo Fácil";
+        emoji = "🚨";
+        estatistica = "90% das pessoas";
+        mensagem = "Cuidado máximo! Você está muito vulnerável a golpes. É essencial que estude nosso material e busque orientação para se proteger. Não navegue sozinho!";
+        cor = "#dc3545";
+      }
+
+      result.innerHTML = `
+        <div style="color: ${cor}; font-size: 1.1em; margin-bottom: 15px;">
+          ${emoji} <strong>${nivel}</strong>
+        </div>
+        <div style="font-size: 1.4em; margin-bottom: 10px;">
+          ${pontuacao}/5 acertos (${porcentagemAcerto}%)
+        </div>
+        <div style="font-size: 0.9em; color: #00c9a7; margin-bottom: 20px;">
+          Você está no mesmo nível que ${estatistica} conseguem alcançar
+        </div>
+      `;
+
+      dica.innerHTML = `
+        <div style="line-height: 1.6;">
+          ${mensagem}
+        </div>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #3e5670; font-size: 0.9em; color: #a0a9b8;">
+          💡 <strong>Dica:</strong> ${pontuacao >= 4 ? 'Compartilhe este quiz com amigos e familiares!' : 'Leia nosso eBook com dicas valiosas para aprender mais sobre proteção contra golpes.'}
+        </div>
+      `;
+    }
+
+    carregarPerguntas();
+  </script>
+</body>
+</html>

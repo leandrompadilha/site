@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guia Anti-Golpes • Proteja-se com Conhecimento</title>
+  <link rel="icon" type="image/png" href="src\img\icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --secondary: #6366f1;
+      --accent: #10b981;
+      --text: #1f2937;
+      --bg-light: #f9fafb;
+      --bg-dark: #eef2ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--bg-light), var(--bg-dark));
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .btn-buy {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 16px 32px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-buy:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      flex: 1 1 calc(25% - 20px);
+      background: #fff;
+      border: 2px solid var(--bg-dark);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .feature p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .more {
+      text-align: center;
+      font-size: 1.1em;
+      margin-top: 30px;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+
+    .benefits {
+      background: var(--bg-dark);
+      padding: 60px 20px;
+      border-top: 2px solid var(--primary);
+    }
+
+    .benefits h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .benefits li {
+      margin-bottom: 15px;
+      font-size: 1.05em;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .benefits li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .testimonial {
+      background: #fff;
+      padding: 60px 20px;
+      border-top: 3px solid var(--accent);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .price {
+      text-align: center;
+      font-size: 2em;
+      margin: 40px 0;
+      color: var(--accent);
+    }
+
+    .cta {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .footer {
+      background: var(--text);
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .feature {
+        flex: 1 1 100%;
+      }
+      .hero h1 { font-size: 2.2em; }
+      .hero p { font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>🚨 Não Caia Mais em Golpes</h1>
+    <p>Descubra como se proteger dos golpes mais perigosos do Brasil com este guia prático e direto.</p>
+    <a href="payment.html" class="btn-buy">Adquirir por R$12,90</a>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center; margin-bottom:30px;">📚 O que você vai aprender</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>📱 Golpes Digitais</h3>
+        <p>WhatsApp clonado, boletos falsos, phishing e muito mais.</p>
+      </div>
+      <div class="feature">
+        <h3>💳 Fraudes Bancárias</h3>
+        <p>Falso gerente, suporte técnico, cartão recolhido por motoboy.</p>
+      </div>
+      <div class="feature">
+        <h3>❤️ Golpes Emocionais</h3>
+        <p>Estelionato afetivo e manipulações sentimentais.</p>
+      </div>
+      <div class="feature">
+        <h3>🔍 Sinais de Alerta</h3>
+        <p>10 indícios para reconhecer um golpe antes que seja tarde.</p>
+      </div>
+    </div>
+    <div class="more">...e muito mais!</div>
+  </section>
+
+  <section class="benefits">
+    <h2>💡 Por que você precisa deste eBook</h2>
+    <ul>
+      <li>Evite prejuízos financeiros e emocionais</li>
+      <li>Proteja sua família com conhecimento prático</li>
+      <li>Aprenda com casos reais e dicas diretas</li>
+      <li>Tenha um plano de ação rápido em mãos</li>
+      <li>Compartilhe com quem você ama — idosos, jovens e amigos</li>
+    </ul>
+  </section>
+
+  <section class="testimonial">
+    “Esse eBook me ajudou a salvar meus pais de um golpe por telefone! Vale cada centavo.”  
+    <br><br><strong>– Mariana, RJ</strong><br><br>
+    “Mostrei o conteúdo para minha mãe e ela reconheceu um golpe de WhatsApp antes de cair.”  
+    <br><br><strong>– Juliana, MG</strong><br><br>
+    “Sou comerciante e já perdi dinheiro com Pix falso. Agora, com esse guia, estou muito mais seguro.”  
+    <br><br><strong>– Roberto, PR</strong>
+  </section>
+
+  <div class="price">💸 Apenas R$12,90</div>
+
+  <div class="cta">
+    <a href="payment.html" class="btn-buy">Quero me proteger agora</a>
+    <p style="margin-top:10px;">Pagamento único. Acesso imediato após compra.</p>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 Guia Anti-Golpes • Proteja-se com conhecimento
+  </footer>
+
+</body>
+</html>
