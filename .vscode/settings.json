@@ -6,6 +6,7 @@
         "Disqus",
         "DZRSESB",
         "Inteligence",
+        "leandropadilha",
         "Ligga",
         "Mobi",
         "Photoshop",
@@ -13,24 +14,25 @@
         "Postgresql",
         "powerbi"
     ],
+    "peacock.color": "#111111",
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#2a2a2a",
-        "activityBar.background": "#2a2a2a",
+        "activityBar.activeBackground": "#1a1a1a",
+        "activityBar.background": "#1a1a1a",
         "activityBar.foreground": "#e7e7e7",
         "activityBar.inactiveForeground": "#e7e7e799",
         "activityBarBadge.background": "#606020",
         "activityBarBadge.foreground": "#e7e7e7",
         "commandCenter.border": "#e7e7e799",
-        "sash.hoverBorder": "#2a2a2a",
-        "statusBar.background": "#111111",
+        "sash.hoverBorder": "#1a1a1a",
+        "statusBar.background": "#000000",
         "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#2a2a2a",
-        "statusBarItem.remoteBackground": "#111111",
+        "statusBarItem.hoverBackground": "#1a1a1a",
+        "statusBarItem.remoteBackground": "#000000",
         "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#111111",
+        "titleBar.activeBackground": "#000000",
         "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#11111199",
+        "titleBar.inactiveBackground": "#00000099",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#111111"
+    "peacock.remoteColor": "#000000"
 }
