@@ -124,12 +124,6 @@
       cursor: pointer;
     }
 
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
     body.dark .card {
       background-color: var(--card-dark);
     }
@@ -165,6 +159,20 @@
       transform: scale(1.05);
       background-color: #005fa3;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    a:focus,
+    button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    a:visited {
+      color: inherit;
     }
 
     footer {
@@ -208,79 +216,34 @@
     </nav>
   </header>
 
-<main>
-  <section style="max-width: 800px; margin: 0 auto 4rem; font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
-    <h2 style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;">Sobre mim</h2>
-    <p>Sou apaixonado por dados, tecnologia e criatividade. Atuo profissionalmente com análise de dados, business intelligence e automação de processos, unindo pensamento estratégico com olhar de quem já veio da área da publicidade.</p>
-    <p>Ao longo da minha trajetória, desenvolvi soluções que transformam números em decisões, sempre com foco em clareza, usabilidade e resultado.</p>
+  <main>
+    <section style="max-width: 800px; margin: 0 auto 4rem; font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
+      <h2 style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;">Sobre mim</h2>
+      <p>Sou apaixonado por dados, tecnologia e criatividade. Atuo profissionalmente com análise de dados, business intelligence e automação de processos, unindo pensamento estratégico com olhar de quem já veio da área da publicidade.</p>
+      <p>Ao longo da minha trajetória, desenvolvi soluções que transformam números em decisões, sempre com foco em clareza, usabilidade e resultado.</p>
 
-    <h3 style="font-size: 1.6rem; color: var(--accent); margin-top: 2rem;">Além dos gráficos e códigos</h3>
-    <p>Nos momentos de pausa, gosto de explorar o mundo da eletrônica, desmontar e montar ideias (literalmente), criar coisas e me conectar com tudo o que estimula a mente e a criatividade.</p>
+      <h3 style="font-size: 1.6rem; color: var(--accent); margin-top: 2rem;">Além dos gráficos e códigos</h3>
+      <p>Nos momentos de pausa, gosto de explorar o mundo da eletrônica, desmontar e montar ideias (literalmente), criar coisas e me conectar com tudo o que estimula a mente e a criatividade.</p>
+    </section>
 
-  </section>
+    <div class="grid">
+      <div class="card">
+        <h2>💼 Profissional</h2>
+        <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
+        <a href="/portfolio" target="_blank">
+          <button>Ver Portfólio</button>
+        </a>
+      </div>
 
-  <div class="grid">
-    <div class="card">
-      <h2>💼 Profissional</h2>
-      <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
-      <a href="/portfolio" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Ver Portfólio
-        </button>
-      </a>
-    </div>
+      <div class="card">
+        <h2>🎸 Criativo & Pessoal</h2>
+        <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
+        <a href="/blog" target="_blank">
+          <button>Acessar Blog</button>
+        </a>
+      </div>
 
-    <div class="card">
-      <h2>🎸 Criativo & Pessoal</h2>
-      <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
-      <a href="/blog" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Acessar Blog
-        </button>
-      </a>
-    </div>
-
-    <div class="card">
-      <h2>📚 Conteúdo Digital</h2>
-      <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
-      <a href="/ebooks" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Ver Conteúdos
-        </button>
-      </a>
-    </div>
-  </div>
-
-
-</main>
-
-
-  <footer>
-    © 2025 Leandro Padilha | Rodando em modo criativo desde 1990.
-  </footer>
-
-  <script>
-    // Modo escuro automático
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.add('dark');
-    }
-
-    // Animações de entrada
-    window.addEventListener('load', () => {
-      document.getElementById('title').style.opacity = 1;
-      document.getElementById('title').style.transform = 'translateY(0)';
-      document.getElementById('subtitle').style.opacity = 1;
-      document.getElementById('subtitle').style.transform = 'translateY(0)';
-      document.getElementById('nav').style.opacity = 1;
-      document.getElementById('nav').style.transform = 'translateY(0)';
-    });
-
-    // Parallax avatar
-    window.addEventListener('scroll', () => {
-      const avatar = document.getElementById('avatar');
-      const offset = window.scrollY * 0.2;
-      avatar.style.transform = `translateY(${offset}px)`;
-    });
-  </script>
-</body>
-</html>
+      <div class="card">
+        <h2>📚 Conteúdo Digital</h2>
+        <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
+        <a href="/ebooks
