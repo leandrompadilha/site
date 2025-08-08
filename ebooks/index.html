@@ -3,129 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meus eBooks | Leandro Padilha</title>
+  <title>Em Desenvolvimento</title>
   <link rel="icon" type="image/png" href="ebooks/src/ball.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #f4f6f8;
-      color: #2c3e50;
-    }
-
-    header {
-      background-color: #1f1f1f;
-      color: white;
-      padding: 3rem 2rem;
+      height: 100vh;
+      background: linear-gradient(135deg, #0077cc, #00c6ff);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
+    .container {
+      animation: fadeIn 1.2s ease-out;
       max-width: 600px;
-      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #f0f0f0;
       opacity: 0.9;
     }
 
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .ebook {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      padding: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .ebook img {
-      max-width: 200px;
-      border-radius: 8px;
-    }
-
-    .ebook-content {
-      flex: 1;
-    }
-
-    .ebook-content h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .ebook-content p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .ebook-content a {
-      display: inline-block;
-      background-color: #3498db;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    .ebook-content a:hover {
-      background-color: #2980b9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #eaecee;
-      font-size: 0.95rem;
-      color: #555;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
 
     @media (max-width: 600px) {
-      .ebook {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .ebook img {
-        margin: 0 auto;
-      }
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📚 Meus eBooks</h1>
-    <p>Conteúdo prático, direto e feito para quem quer aprender com segurança e clareza.</p>
-  </header>
+  <div class="container">
+    <h1 id="title">🚧 Em Desenvolvimento</h1>
+    <p id="subtitle">Estamos preparando algo incrível.<br>Volte em breve para conferir!</p>
+  </div>
 
-  <main>
-    <section class="ebook">
-      <img src="src/img/nao-caia-em-golpes.png" alt="Capa do eBook Não Caia em Golpes" />
-      <div class="ebook-content">
-        <h2>Não Caia em Golpes</h2>
-        <p>
-          Um guia essencial para navegar com segurança no mundo digital. Aprenda a identificar armadilhas, proteger seus dados e evitar prejuízos com dicas simples e eficazes.
-        </p>
-        <a href="redeantigolpe/index.html">Baixar eBook</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Leandro Padilha — Rodando em modo criativo desde 1990 🤖
-  </footer>
+  <script>
+    // Animação de entrada suave
+    window.addEventListener('load', () => {
+      document.getElementById('title').style.opacity = 1;
+      document.getElementById('subtitle').style.opacity = 1;
+    });
+  </script>
 </body>
 </html>

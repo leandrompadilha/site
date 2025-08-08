@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leandro Padilha | Blog</title>
+  <link rel="icon" type="image/png" href="blog/src/ball.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --background: #f4f6f8;
+      --text: #2c3e50;
+      --highlight: #0077cc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #1a252f);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #eaecee;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👋 Olá, eu sou Leandro Padilha</h1>
+    <p>Analista de dados, criador de soluções e explorador de ideias. Bem-vindo ao meu universo.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre mim</h2>
+      <p>
+        Sou apaixonado por <span class="highlight">dados, tecnologia e criatividade</span>. Atuo profissionalmente com análise de dados, business intelligence e automação de processos — unindo pensamento estratégico com olhar de quem já veio da área da publicidade.
+      </p>
+      <p>
+        Ao longo da minha trajetória, desenvolvi soluções que transformam números em decisões, sempre com foco em <span class="highlight">clareza, usabilidade e resultado</span>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Além dos gráficos e códigos</h2>
+      <p>
+        Nos momentos de pausa, gosto de explorar o mundo da eletrônica, desmontar e montar ideias (literalmente), tocar violão e me conectar com tudo o que estimula a mente e a criatividade.
+      </p>
+    </section>
+
+    <section>
+      <h2>O que você encontra aqui</h2>
+      <p>
+        Este blog é um espaço onde compartilho <span class="highlight">projetos, ideias, reflexões</span> e também <span class="highlight">produtos digitais</span> — como eBooks práticos e acessíveis sobre temas que domino ou que me despertam curiosidade.
+      </p>
+      <p>
+        Em breve, você poderá explorar meus conteúdos...
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Leandro Padilha 💡 Rodando em modo criativo desde 1990.
+  </footer>
+</body>
+</html>
