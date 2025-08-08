@@ -149,6 +149,24 @@
       color: var(--muted);
     }
 
+    button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 50px;
+      background-color: #0077cc;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #005fa3;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -202,27 +220,38 @@
   </section>
 
   <div class="grid">
-    <a href="/portfolio" target="_blank" class="card-link">
-      <div class="card">
-        <h2>💼 Profissional</h2>
-        <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
-      </div>
-    </a>
+    <div class="card">
+      <h2>💼 Profissional</h2>
+      <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
+      <a href="/portfolio" target="_blank">
+        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+          Ver Portfólio
+        </button>
+      </a>
+    </div>
 
-    <a href="/blog" target="_blank" class="card-link">
-      <div class="card">
-        <h2>🎸 Criativo & Pessoal</h2>
-        <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
-      </div>
-    </a>
+    <div class="card">
+      <h2>🎸 Criativo & Pessoal</h2>
+      <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
+      <a href="/blog" target="_blank">
+        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+          Acessar Blog
+        </button>
+      </a>
+    </div>
 
-    <a href="/ebooks" target="_blank" class="card-link">
-      <div class="card">
-        <h2>📚 Conteúdo Digital</h2>
-        <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
-      </div>
-    </a>
+    <div class="card">
+      <h2>📚 Conteúdo Digital</h2>
+      <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
+      <a href="/ebooks" target="_blank">
+        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+          Ver Conteúdos
+        </button>
+      </a>
+    </div>
   </div>
+
+
 </main>
 
 
