@@ -18,7 +18,6 @@
       --card-dark: #1a1a1a;
       --shadow: rgba(0, 0, 0, 0.08);
     }
-
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -26,12 +25,10 @@
       color: var(--text-light);
       transition: background 0.4s ease, color 0.4s ease;
     }
-
     body.dark {
       background-color: var(--bg-dark);
       color: var(--text-dark);
     }
-
     header {
       position: relative;
       text-align: center;
@@ -40,7 +37,6 @@
       color: white;
       overflow: hidden;
     }
-
     .avatar {
       width: 140px;
       height: 140px;
@@ -51,13 +47,11 @@
       transform: translateY(0);
       transition: transform 0.3s ease;
     }
-
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     header h1 {
       font-size: 3.4rem;
       font-weight: 800;
@@ -66,7 +60,6 @@
       transform: translateY(20px);
       transition: all 0.8s ease;
     }
-
     header p {
       font-size: 1.4rem;
       max-width: 720px;
@@ -75,7 +68,6 @@
       transform: translateY(20px);
       transition: all 0.8s ease 0.2s;
     }
-
     nav {
       margin-top: 3rem;
       display: flex;
@@ -86,7 +78,6 @@
       transform: translateY(20px);
       transition: all 0.8s ease 0.4s;
     }
-
     nav a {
       text-decoration: none;
       padding: 1rem 2rem;
@@ -97,24 +88,20 @@
       box-shadow: 0 4px 12px var(--shadow);
       transition: all 0.3s ease;
     }
-
     nav a:hover {
       background-color: var(--accent);
       color: white;
     }
-
     main {
       max-width: 1100px;
       margin: auto;
       padding: 5rem 2rem;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
     }
-
     .card {
       background-color: var(--card-light);
       padding: 2rem;
@@ -123,32 +110,26 @@
       transition: transform 0.3s ease, background 0.3s ease;
       cursor: pointer;
     }
-
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
     body.dark .card {
       background-color: var(--card-dark);
     }
-
     .card:hover {
       transform: translateY(-6px);
     }
-
     .card h2 {
       font-size: 1.6rem;
       margin-bottom: 0.8rem;
       color: var(--accent);
     }
-
     .card p {
       font-size: 1.1rem;
       color: var(--muted);
     }
-
     button {
       margin-top: 1rem;
       padding: 0.8rem 1.6rem;
@@ -160,13 +141,11 @@
       cursor: pointer;
       transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
-
     button:hover {
       transform: scale(1.05);
       background-color: #005fa3;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -174,12 +153,10 @@
       color: var(--muted);
       background-color: #f0f2f5;
     }
-
     body.dark footer {
       background-color: #1a1a1a;
       color: #aaa;
     }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.6rem;
@@ -207,54 +184,38 @@
       <a href="/ebooks" target="_blank">Conteúdos Digitais</a>
     </nav>
   </header>
-
-<main>
-  <section style="max-width: 800px; margin: 0 auto 4rem; font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
-    <h2 style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;">Sobre mim</h2>
-    <p>Sou apaixonado por dados, tecnologia e criatividade. Atuo profissionalmente com análise de dados, business intelligence e automação de processos, unindo pensamento estratégico com olhar de quem já veio da área da publicidade.</p>
-    <p>Ao longo da minha trajetória, desenvolvi soluções que transformam números em decisões, sempre com foco em clareza, usabilidade e resultado.</p>
-
-    <h3 style="font-size: 1.6rem; color: var(--accent); margin-top: 2rem;">Além dos gráficos e códigos</h3>
-    <p>Nos momentos de pausa, gosto de explorar o mundo da eletrônica, desmontar e montar ideias (literalmente), criar coisas e me conectar com tudo o que estimula a mente e a criatividade.</p>
-
-  </section>
-
-  <div class="grid">
-    <div class="card">
-      <h2>💼 Profissional</h2>
-      <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
-      <a href="/portfolio" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Ver Portfólio
-        </button>
-      </a>
+  <main>
+    <section style="max-width: 800px; margin: 0 auto 4rem; font-size: 1.2rem; line-height: 1.8; color: var(--muted);">
+      <h2 style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;">Sobre mim</h2>
+      <p>Sou apaixonado por dados, tecnologia e criatividade. Atuo profissionalmente com análise de dados, business intelligence e automação de processos, unindo pensamento estratégico com olhar de quem já veio da área da publicidade.</p>
+      <p>Ao longo da minha trajetória, desenvolvi soluções que transformam números em decisões, sempre com foco em clareza, usabilidade e resultado.</p>
+      <h3 style="font-size: 1.6rem; color: var(--accent); margin-top: 2rem;">Além dos gráficos e códigos</h3>
+      <p>Nos momentos de pausa, gosto de explorar o mundo da eletrônica, desmontar e montar ideias (literalmente), criar coisas e me conectar com tudo o que estimula a mente e a criatividade.</p>
+    </section>
+    <div class="grid">
+      <div class="card">
+        <h2>💼 Profissional</h2>
+        <p>Experiência sólida em análise de dados, BI e automações. Transformo números em decisões com clareza e impacto.</p>
+        <a href="/portfolio" target="_blank">
+          <button>Ver Portfólio</button>
+        </a>
+      </div>
+      <div class="card">
+        <h2>🎸 Criativo & Pessoal</h2>
+        <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
+        <a href="/blog" target="_blank">
+          <button>Acessar Blog</button>
+        </a>
+      </div>
+      <div class="card">
+        <h2>📚 Conteúdo Digital</h2>
+        <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
+        <a href="/ebooks" target="_blank">
+          <button>Ver Conteúdos</button>
+        </a>
+      </div>
     </div>
-
-    <div class="card">
-      <h2>🎸 Criativo & Pessoal</h2>
-      <p>Sou movido por curiosidade: eletrônica, música e tudo que estimula a mente. Gosto de desmontar ideias e remontá-las com propósito.</p>
-      <a href="/blog" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Acessar Blog
-        </button>
-      </a>
-    </div>
-
-    <div class="card">
-      <h2>📚 Conteúdo Digital</h2>
-      <p>Crio conteúdo acessível e extremamente útil sobre temas diversos: produtividade, tecnologia, carreira e mais. Tudo com linguagem clara e prática.</p>
-      <a href="/ebooks" target="_blank">
-        <button style="margin-top: 1rem; padding: 0.8rem 1.6rem; border: none; border-radius: 50px; background-color: #0077cc; color: white; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-          Ver Conteúdos
-        </button>
-      </a>
-    </div>
-  </div>
-
-
-</main>
-
-
+  </main>
   <footer>
     © 2025 Leandro Padilha | Rodando em modo criativo desde 1990.
   </footer>
@@ -281,6 +242,23 @@
       const offset = window.scrollY * 0.2;
       avatar.style.transform = `translateY(${offset}px)`;
     });
+
+    // Detecta se é dispositivo móvel
+    function isMobileDevice() {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Remove foco visual dos botões após clique em dispositivos móveis
+    if (isMobileDevice()) {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(() => {
+            link.blur();
+          }, 100);
+        });
+      });
+    }
   </script>
 </body>
 </html>
